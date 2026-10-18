@@ -1,0 +1,11 @@
+{
+  "dart.runPubGetOnPubspecChanges": "always",
+  "sonarlint.rules": {
+    "xml:S5332": { "level": "off" },
+    "xml:S6358": { "level": "off" },
+    "xml:S7207": { "level": "off" }
+  },
+  "sonarlint.analyzerProperties": {
+    "sonar.exclusions": "**/AndroidManifest.xml"
+  }
+}

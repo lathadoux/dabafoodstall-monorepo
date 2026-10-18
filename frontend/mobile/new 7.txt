@@ -1,0 +1,22 @@
+[{
+	"resource": "/d:/dev/dabafoodstall/lib/data/datasources/local_data_source.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 71,
+	"startColumn": 5,
+	"endLineNumber": 71,
+	"endColumn": 10,
+	"modelVersionId": 9,
+	"origin": "extHost1"
+}]

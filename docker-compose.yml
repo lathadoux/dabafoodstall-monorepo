@@ -1,0 +1,109 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15-alpine # Postgres 15 stable
+    container_name: dabafood_postgres
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      POSTGRES_USER: dabadba
+      POSTGRES_PASSWORD: dabadbapass
+      POSTGRES_DB: dabafoodstall_cloud
+    ports:
+      - "5433:5432" # Externe 5433 (Hôte Windows) -> Interne 5432 (Conteneur)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Adapté à la structure racine : pointe vers le sous-dossier backend
+      - ./backend/database/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./backend/database/02_seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+    networks:
+      - dabapos_network
+
+  adminer:
+    image: adminer:latest
+    container_name: daba_adminer_manager
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    ports:
+      - "8080:8080" # Interface accessible sur http://localhost:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres_db 
+    depends_on:
+      - postgres_db
+    networks:
+      - dabapos_network
+
+  api_server:
+    build:
+      context: ./backend # Spécifie le contexte de build dans le dossier backend
+      dockerfile: Dockerfile
+    container_name: dabafood_api
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"    
+    ports:
+      - "5000:5000" # Votre Gateway d'API sécurisée sur le port 5000 requis
+    environment:
+      PORT: 5000
+      NODE_ENV: ${NODE_ENV:-development}
+      DB_HOST: postgres_db
+      DB_USER: dabadba
+      DB_PASSWORD: dabadbapass
+      DB_NAME: dabafoodstall_cloud
+      DB_PORT: 5432
+      JWT_SECRET: "DABA_SUPER_SECRET_KEY_2026_IVORY_COAST"
+    depends_on:
+      - postgres_db
+    volumes:
+      # Adapté à la structure racine : montage individuel des composants du dossier backend
+      - ./backend/server.js:/usr/src/app/server.js
+      - ./backend/config:/usr/src/app/config
+      - ./backend/controllers:/usr/src/app/controllers
+      - ./backend/middleware:/usr/src/app/middleware
+      - ./backend/routes:/usr/src/app/routes
+      - ./backend/public:/usr/src/app/public
+      - ./backend/tests:/usr/src/app/tests
+      # Montage crucial pour la compilation à la volée : donne accès au code Flutter au serveur d'API
+      - ./frontend/mobile:/usr/src/app/frontend/mobile
+    networks:
+      - dabapos_network
+
+  ngrok_tunnel:
+    image: ngrok/ngrok:latest
+    container_name: dabafood_tunnel
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      NGROK_AUTHTOKEN: "3KdicOtNUtAdvU8pVjTZuAHoOm2_2Rc1Bv673z8BJqekG8UeN"
+    command:
+      - "http"
+      - "api_server:5000"
+      - "--domain=viewing-gravity-cultivate.ngrok-free.dev"
+      - "--request-header-add=ngrok-skip-browser-warning:true"
+    depends_on:
+      - api_server
+    networks:
+      - dabapos_network
+
+volumes:
+  pgdata:
+
+networks:
+  dabapos_network:
+    driver: bridge

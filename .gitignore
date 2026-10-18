@@ -1,0 +1,7 @@
+**/node_modules/
+**/build/
+**/.dart_tool/
+**/.flutter-plugins*
+**/pos_local.db
+**/.env
+**/*.log

@@ -1,0 +1,16 @@
+ avdmanager create avd -n StallDevice -k "system-images;android-34;google_apis;x86_64" --device "pixel_5"
+Auto-selecting single ABI x86_64        ] 25% Loading local repository...       
+Error: Could not load devices from C:\Android\system-images\android-34\google_apis\x86_64\devices.xml
+Error: C:\Android\system-images\android-34\google_apis\x86_64\devices.xml
+
+emulator -avd StallDevice
+emulator : Le terme «emulator» n'est pas reconnu comme nom d'applet de commande, fonction, 
+fichier de script ou programme exécutable. Vérifiez l'orthographe du nom, ou si un chemin 
+d'accès existe, vérifiez que le chemin d'accès est correct et réessayez.
+Au caractère Ligne:1 : 1
++ emulator -avd StallDevice
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (emulator:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS D:\dev\dabafoodstall> 

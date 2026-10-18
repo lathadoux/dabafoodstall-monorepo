@@ -1,0 +1,29 @@
+// path: backend/templates/garba_stall.json
+{
+  "type_pos": "garba_stall",
+  "familles": [
+    { "id_famille": 1, "nom_famille": "Garba 🐟", "type_famille": "vente" },
+    { "id_famille": 2, "nom_famille": "Attiéké 🌾", "type_famille": "vente" },
+    { "id_famille": 3, "nom_famille": "Condiments 🌶️", "type_famille": "vente" },
+    { "id_famille": 4, "nom_famille": "Boissons 🥤", "type_famille": "vente" },
+    { "id_famille": 5, "nom_famille": "Général 🏢", "type_famille": "achat" },
+    { "id_famille": 6, "nom_famille": "Épicerie 🧅", "type_famille": "achat" },
+    { "id_famille": 7, "nom_famille": "Énergie ⚡", "type_famille": "achat" },
+    { "id_famille": 8, "nom_famille": "Ustensiles 🍳", "type_famille": "achat" },
+    { "id_famille": 9, "nom_famille": "Désaltérants 🥤", "type_famille": "achat" },
+    { "id_famille": 10, "nom_famille": "Mouvements Coffre 🪙", "type_famille": "vente" }
+  ],
+  "articles": [
+    { "id_article": 1, "id_famille": 1, "nom_article": "garba_150", "type_article": "vente", "prix_unitaire": 150.00, "unite_mesure": "pcs" },
+    { "id_article": 2, "id_famille": 1, "nom_article": "garba_200", "type_article": "vente", "prix_unitaire": 200.00, "unite_mesure": "pcs" },
+    { "id_article": 3, "id_famille": 1, "nom_article": "garba_250", "type_article": "vente", "prix_unitaire": 250.00, "unite_mesure": "pcs" },
+    { "id_article": 4, "id_famille": 1, "nom_article": "garba_300", "type_article": "vente", "prix_unitaire": 300.00, "unite_mesure": "pcs" },
+    { "id_article": 5, "id_famille": 1, "nom_article": "garba_400", "type_article": "vente", "prix_unitaire": 400.00, "unite_mesure": "pcs" },
+    { "id_article": 6, "id_famille": 1, "nom_article": "garba_500", "type_article": "vente", "prix_unitaire": 500.00, "unite_mesure": "pcs" },
+    { "id_article": 7, "id_famille": 2, "nom_article": "Attiéké_100", "type_article": "vente", "prix_unitaire": 100.00, "unite_mesure": "pcs" },
+    { "id_article": 8, "id_famille": 2, "nom_article": "Attiéké_50", "type_article": "vente", "prix_unitaire": 50.00, "unite_mesure": "pcs" },
+    { "id_article": 19, "id_famille": 5, "nom_article": "Poisson au montant", "type_article": "achat", "prix_unitaire": 0.00, "unite_mesure": "kg" },
+    { "id_article": 901, "id_famille": 10, "nom_article": "Appro Caisse (+)", "type_article": "vente", "prix_unitaire": 1.00, "unite_mesure": "F" },
+    { "id_article": 902, "id_famille": 10, "nom_article": "Versement  (-)", "type_article": "achat", "prix_unitaire": 1.00, "unite_mesure": "F" }
+  ]
+}

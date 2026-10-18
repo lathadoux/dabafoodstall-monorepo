@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Daba: 1- Clean",
+      "type": "shell",
+      "command": "flutter clean",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend/mobile"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Daba: 2- Pub Get",
+      "type": "shell",
+      "command": "flutter pub get",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend/mobile"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      }
+    },
+    {
+      "label": "Daba: 3- Run Emulator",
+      "type": "shell",
+      "command": "flutter run -d emulator",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend/mobile"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "🚀 Daba: Flash Application Auto",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Daba: 1- Clean",
+        "Daba: 2- Pub Get",
+        "Daba: 3- Run Emulator"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

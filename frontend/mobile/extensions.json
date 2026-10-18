@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dart-code.flutter",
+    "dart-code.dart",
+    "alexcvzz.vscode-sqlite",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.copilot",
+    "eamodio.gitlens"
+  ]
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENZO-POS by GAINZ- Activation & Attribution CRM</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 10px; background: #f4f6f9; color: #333; }
+        .enroll-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 480px; margin: 10px auto; }
+        .header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #e8eaed; padding-bottom: 15px; }
+        .header h2 { margin: 5px 0; color: #1a73e8; }
+        .section-title { font-size: 14px; font-weight: bold; color: #1a73e8; margin: 20px 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group { margin-bottom: 12px; }
+        .row-group { display: flex; gap: 10px; }
+        label { display: block; margin-bottom: 4px; font-weight: 600; font-size: 13px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #dadce0; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
+        input:focus, select:focus { border-color: #1a73e8; outline: none; }
+        .pin-zone { background: #e6f4ea; border: 1px solid #ceead6; padding: 12px; border-radius: 8px; margin-top: 20px; }
+        .pin-field { letter-spacing: 6px; text-align: center; font-size: 22px; font-weight: bold; background: white; }
+        button.btn-submit { background: #1a73e8; color: white; border: none; padding: 14px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; margin-top: 15px; }
+        button.btn-submit:hover { background: #1557b0; }
+        .alert { padding: 12px; border-radius: 6px; margin-bottom: 15px; display: none; font-size: 14px; font-weight: 500; }
+        .alert-error { background: #fce8e6; color: #c5221f; border: 1px solid #fad2cf; }
+        .alert-success { background: #e6f4ea; color: #137333; border: 1px solid #ceead6; }
+        .wfp-box { background: #f8f9fa; padding: 12px; border-radius: 6px; border: 1px dashed #1a73e8; font-family: monospace; word-break: break-all; margin-top: 15px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<div class="enroll-card">
+    <div class="header">
+        <h2>GENZO-POS by GAINZ</h2>
+        <p style="color: #5f6368; margin: 0; font-size: 13px;">Enrôlement Exploitant & Profilage Métier</p>
+    </div>
+
+    <div id="errorAlert" class="alert alert-error"></div>
+    <div id="successAlert" class="alert alert-success"></div>
+
+    <form id="enrollForm">
+        <!-- SECTION 1 : IDENTITÉ DE L'EXPLOITANT -->
+        <div class="section-title">👤 Identité de l'Exploitant</div>
+        <div class="form-group">
+            <label for="clientCivilite">Civilité :</label>
+            <select id="clientCivilite" required>
+                <option value="M.">Monsieur (M.)</option>
+                <option value="Mme">Madame (Mme)</option>
+                <option value="Mlle">Mademoiselle (Mlle)</option>
+            </select>
+        </div>
+        <div class="row-group">
+            <div class="form-group" style="flex: 1;">
+                <label for="clientNom">Nom :</label>
+                <input type="text" id="clientNom" placeholder="ex: Kouadio" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label for="clientPrenom">Prénom :</label>
+                <input type="text" id="clientPrenom" placeholder="ex: Yao" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dateNaissance">Date de Naissance :</label>
+            <input type="date" id="dateNaissance" required>
+        </div>
+
+        <!-- SECTION 2 : CONFIGURATION ET PROFILAGE MÉTIER -->
+        <div class="section-title">⚙️ Profilage Métier (Bulk d'Usine)</div>
+        <div class="form-group">
+            <label for="typePos">Secteur d'Activité de l'Étal :</label>
+            <select id="typePos" required>
+                <option value="garba_stall">Stand de Garba 🐟 (Attiéké, Poisson, Piment)</option>
+                <option value="alloco_stall">Stand d'Alloco 🍌 (Plantain, Poisson grillé, Œuf)</option>
+                <option value="choukouya_stall">Choukouya / Grillades 🥩 (Mouton, Bœuf, Poulet)</option>
+                <option value="soup_stall">Boutique de Soupes / Kédjénou 🍲 (Kédjénou, Escargots)</option>
+                <option value="juice_stall">Bar à Jus Traditionnels 🍹 (Bissap, Gingembre, Bouye)</option>
+                <option value="general">Commerce Général / Alimentation 🛒</option>
+            </select>
+        </div>
+        <div class="row-group">
+            <input type="hidden" id="tenant_id" name="tenant_id" value="">
+            <input type="hidden" id="pos_id" name="pos_id" value="">
+        </div>
+        <div class="form-group">
+            <label for="posRaisonSociale">Raison Sociale du Commerce :</label>
+            <input type="text" id="posRaisonSociale" placeholder="ex: Stand de Garba de la Cité" required>
+        </div>
+
+        <!-- SECTION 3 : CONTACTS ET GÉOLOCALISATION -->
+        <div class="section-title">📍 Contacts & Secteur Abidjan</div>
+        <div class="form-group">
+            <label for="whatsappNumber">Numéro WhatsApp de l'Exploitant :</label>
+            <input type="tel" id="whatsappNumber" placeholder="ex: +2250701020304" required>
+        </div>
+        <div class="form-group">
+            <label for="clientEmail">Email (Optionnel) :</label>
+            <input type="email" id="clientEmail" placeholder="adresse@email.com">
+        </div>
+        <div class="row-group">
+            <div class="form-group" style="flex: 1;">
+                <label for="commune">Commune :</label>
+                <input type="text" id="commune" placeholder="ex: Cocody" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label for="quartier">Quartier :</label>
+                <input type="text" id="quartier" placeholder="ex: Angré" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="adresseGeographique">Adresse Géographique de l'Étal :</label>
+            <input type="text" id="adresseGeographique" placeholder="ex: Face à la pharmacie du quartier" required>
+        </div>
+        <div class="form-group">
+            <label for="gpsCoordinates">Coordonnées GPS de l'Étal :</label>
+            <div style="display: flex; gap: 8px;">
+                <input type="text" id="gpsCoordinates" placeholder="Position non capturée" readonly style="background: #f1f3f4;">
+                <button type="button" id="geoBtn" style="width: auto; background: #137333; color: white; border: none; padding: 0 10px; border-radius: 6px; font-weight: bold;">Capturer</button>
+            </div>
+        </div>
+
+        <!-- ZONE DE VALIDATION COMMERCIALE -->
+        <div class="pin-zone">
+            <label for="pinCommercial" style="color: #0f5b28;">🔒 SIGNATURE COMMERCIALE (CODE PIN) :</label>
+            <input type="password" id="pinCommercial" class="pin-field" placeholder="••••" maxlength="4" inputmode="numeric" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Valider & Compiler l'Abonnement</button>
+    </form>
+
+    <div id="resultBlock" style="display: none;">
+        <div class="wfp-box">
+            <strong>Jeton d'Origine (WFP SHA-256) :</strong><br>
+            <span id="wfpToken"></span>
+        </div>
+        <p style="font-size: 12px; color: #0f5b28; text-align: center; margin-top: 10px; font-weight: bold;">
+            🚀 Catalogue initialisé ! L'APK se synchronisera sur ce profil au premier boot.
+        </p>
+    </div>
+</div>
+
+<script>
+    // 📍 1. Capture des Coordonnées GPS Matérielles de l'Étal
+    document.getElementById('geoBtn').addEventListener('click', () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((pos) => {
+                document.getElementById('gpsCoordinates').value = `${pos.coords.latitude}, ${pos.coords.longitude}`;
+            }, () => {
+                alert("Erreur de localisation. Activez le GPS du téléphone.");
+            });
+        }
+    });
+
+    // 🔑 2. Générateur d'Empreinte Web Cryptographiquement Sécurisé (Fix S2245)
+    function generateWfpHash() {
+        const array = new Uint8Array(32);
+        window.crypto.getRandomValues(array);
+        return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+    }
+
+    // 📡 3. Orchestrateur d'Enrôlement et Interception Métier du PIN Commercial
+    document.getElementById('enrollForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const err = document.getElementById('errorAlert');
+        const succ = document.getElementById('successAlert');
+        const resBox = document.getElementById('resultBlock');
+        const pinField = document.getElementById('pinCommercial');
+        
+        // Réinitialisation visuelle des alertes IHM avant l'appel
+        if (err) err.style.display = 'none'; 
+        if (succ) succ.style.display = 'none'; 
+        if (resBox) resBox.style.display = 'none';
+        
+        const wfp = generateWfpHash();
+
+        // Compilation dynamique du payload dictionnaire JSON (IDs gérés nativement par le Cloud)
+        const payload = {
+            web_fingerprint: wfp,
+            pos_raison_sociale: document.getElementById('posRaisonSociale').value,
+            term_phone_number: "+225" + String(window.crypto.getRandomValues(new Uint32Array(1))[0] % 100000000),
+            pin_commercial: pinField.value, // Extraction pour contrôle de signature RH
+            client_email: document.getElementById('clientEmail').value,
+            whatsapp_number: document.getElementById('whatsappNumber').value,
+            commune: document.getElementById('commune').value,
+            quartier: document.getElementById('quartier').value,
+            adresse_geographique: document.getElementById('adresseGeographique').value,
+            gps_coordinates: document.getElementById('gpsCoordinates').value,
+            client_civilite: document.getElementById('clientCivilite').value,
+            client_nom: document.getElementById('clientNom').value,
+            client_prenom: document.getElementById('clientPrenom').value,
+            date_naissance: document.getElementById('dateNaissance').value,
+            type_pos: document.getElementById('typePos').value,
+            jours_initiaux: 30
+        };
+        
+        console.log("📡 [DABA-DEBUG-FRONT 1] Émission du Payload JSON :");
+        console.table(payload); // Affiche le dictionnaire sous forme de tableau propre dans l'inspecteur web
+
+        try {
+            // Émission de la requête d'authentification vers la Gateway Node.js
+            const r = await fetch('/api/v1/license/commercial-cosign', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                'ngrok-skip-browser-warning': 'true', // 🔑 LE SÈSAME NGROK : Court-circuite la page d'interception pour l'API
+                'User-Agent': 'CustomDabaPOSAgent/1.0',
+                body: JSON.stringify(payload)
+            });
+        
+            console.log(`📡 [DABA-DEBUG-FRONT 2] Réponse HTTP Statut : ${r.status}`);
+        
+            const d = await r.json();
+
+            console.log("📡 [DABA-DEBUG-FRONT 3] Contenu du dictionnaire reçu :", d);
+
+
+            // 🛑 TRENTATIVE D'INTRUSION OU FAUX PIN : Interception chirurgicale des statuts d'erreurs
+            if (r.status === 401 || d.message === "INVALID_PIN") {
+                if (err) {
+                    err.innerText = "⚠️ Signature Commerciale Incorrecte : Ce code PIN ne correspond à aucun utilisateur habilité.";
+                    err.style.display = 'block';
+                }
+                pinField.value = ""; // Purge instantanée du champ password
+                pinField.focus();   // Redonne immédiatement la main au clavier physique
+                return;
+            }
+
+            if (r.status === 403 || d.message === "UNAUTHORIZED_ROLE") {
+                if (err) {
+                    err.innerText = "🚫 Privilèges Insuffisants : Ce code PIN est valide mais vous n'avez pas le rôle 'Commercial' requis pour sceller cet enrôlement.";
+                    err.style.display = 'block';
+                }
+                pinField.value = ""; // Vider le champ
+                pinField.focus();   // Redonner la main
+                return;
+            }
+
+            // 🎉 CONFIGURATION VALIDE : L'abonnement passe en statut 'en_attente' sur PostgreSQL
+            if (r.ok || d.status === 'success') {
+                if (succ) {
+                    succ.innerText = d.message || "Enrôlement enregistré. Profil en attente de facturation."; 
+                    succ.style.display = 'block';
+                }
+                
+                // Affichage du Jeton d'activation ou du code court à 3x4 chiffres généré
+                const wfpTokenElement = document.getElementById('wfpToken');
+                if (wfpTokenElement) wfpTokenElement.innerText = d.code_activation || wfp;
+                
+                if (resBox) resBox.style.display = 'block';
+                document.getElementById('enrollForm').reset();
+            } else {
+                if (err) {
+                    err.innerText = d.message || d.error || "Échec critique du protocole d'enrôlement.";
+                    err.style.display = 'block';
+                }
+            }
+        } catch (error_) {
+            console.error("Échec réseau de la souscription terrain :", error_);
+            if (err) {
+                err.innerText = "Impossible de joindre la passerelle Ngrok Cloud. Vérifiez votre conteneur.";
+                err.style.display = 'block';
+            }
+        }
+    });
+</script>

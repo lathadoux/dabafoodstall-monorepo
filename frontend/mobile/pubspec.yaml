@@ -1,0 +1,53 @@
+name: dabafoodstall
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0' # Rehaussé pour correspondre à la version stable de Flutter 3.47.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- CONFIGURATION VISUELLE DE BASE ---
+  cupertino_icons: ^1.0.8
+  android_id: ^0.4.0
+  encrypt: ^5.0.3 # 🔑 AJOUT POUR LE DÉCHIFFREMENT LOCAL DES LICENCES 
+  crypto: ^3.0.3
+  # --- PERSISTANCE LOCALE & BDD (OFFLINE-FIRST) ---
+  sqflite: ^2.4.0
+  path_provider: ^2.1.3
+    # 📤 Moteur natif de partage de fichiers et intents (WhatsApp, Telegram)
+  share_plus: ^10.1.0
+
+  path: ^1.9.0
+  http: ^1.2.2
+  flutter_secure_storage: ^9.0.0 # Pour stocker la licence de manière chiffrée
+  device_info_plus: ^10.1.0 # 🟢 AJOUT DE L'EXTENSION D'IDENTIFICATION MATÉRIELLE
+  
+  # --- GESTION D'ÉTAT & ARCHITECTURE ---
+  flutter_riverpod: ^2.5.1
+
+  # --- GESTION RÉSEAU & CONNECTIVITÉ ---
+  connectivity_plus: ^6.1.0
+
+  # 📄 Moteur de génération de documents PDF natif
+  pdf: ^3.10.7
+  # --- MATÉRIEL & EXPÉRIENCE TERRAIN ---
+  blue_thermal_printer_plus: ^0.1.0 # 🚀 Remplacement moderne, compatible AGP 9+, SDK 34+ et Flutter 3.47+
+  shared_preferences: ^2.5.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0 # Ajusté pour correspondre à la structure de l'écosystème SDK v3.4
+
+flutter:
+  uses-material-design: true
+
+  # Activation des dossiers d'assets locaux pour le stand
+  assets:
+    - assets/icons/
+    - assets/images/

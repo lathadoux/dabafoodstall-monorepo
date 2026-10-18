@@ -1,0 +1,1320 @@
+[{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "missing_hex_digit",
+	"severity": 8,
+	"message": "Hexadecimal digit expected.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 44,
+	"endLineNumber": 9,
+	"endColumn": 45,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "expected_token",
+	"severity": 8,
+	"message": "Expected to find ','.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 45,
+	"endLineNumber": 9,
+	"endColumn": 53,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "extra_positional_arguments",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/extra_positional_arguments",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Too many positional arguments: 1 expected, but 2 found.\nTry removing the extra arguments.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 45,
+	"endLineNumber": 9,
+	"endColumn": 53,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name 'XF1A1A1A'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 45,
+	"endLineNumber": 9,
+	"endColumn": 53,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "const_with_non_constant_argument",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/const_with_non_constant_argument",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Arguments of a constant creation must be constant expressions.\nTry making the argument a valid constant, or use 'new' to call the constructor.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 45,
+	"endLineNumber": 9,
+	"endColumn": 53,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "invalid_constant",
+	"severity": 8,
+	"message": "Invalid constant value.",
+	"source": "dart",
+	"startLineNumber": 43,
+	"startColumn": 81,
+	"endLineNumber": 43,
+	"endColumn": 95,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_getter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_getter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The getter 'blackDE' isn't defined for the type 'Colors'.\nTry importing the library that defines 'blackDE', correcting the name to the name of an existing getter, or defining a getter or field named 'blackDE'.",
+	"source": "dart",
+	"startLineNumber": 43,
+	"startColumn": 88,
+	"endLineNumber": 43,
+	"endColumn": 95,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "argument_type_not_assignable",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/argument_type_not_assignable",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The argument type 'CardTheme' can't be assigned to the parameter type 'CardThemeData?'. ",
+	"source": "dart",
+	"startLineNumber": 47,
+	"startColumn": 18,
+	"endLineNumber": 54,
+	"endColumn": 8,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "use_full_hex_values_for_flutter_colors",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/use_full_hex_values_for_flutter_colors",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Instances of 'Color' should be created using an 8-digit hexadecimal integer (such as '0xFFFFFFFF').",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 43,
+	"endLineNumber": 9,
+	"endColumn": 45,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "constant_identifier_names",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/constant_identifier_names",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "The constant name 'CleanWhite' isn't a lowerCamelCase identifier.\nTry changing the name to follow the lowerCamelCase style.",
+	"source": "dart",
+	"startLineNumber": 10,
+	"startColumn": 22,
+	"endLineNumber": 10,
+	"endColumn": 32,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "constant_identifier_names",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/constant_identifier_names",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "The constant name 'AlertRed' isn't a lowerCamelCase identifier.\nTry changing the name to follow the lowerCamelCase style.",
+	"source": "dart",
+	"startLineNumber": 11,
+	"startColumn": 22,
+	"endLineNumber": 11,
+	"endColumn": 30,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/theme/app_theme.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "constant_identifier_names",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/constant_identifier_names",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "The constant name 'SuccessGreen' isn't a lowerCamelCase identifier.\nTry changing the name to follow the lowerCamelCase style.",
+	"source": "dart",
+	"startLineNumber": 12,
+	"startColumn": 22,
+	"endLineNumber": 12,
+	"endColumn": 34,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/database/database_helper.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "expected_token",
+	"severity": 8,
+	"message": "Expected to find '}'.",
+	"source": "dart",
+	"startLineNumber": 247,
+	"startColumn": 1,
+	"endLineNumber": 247,
+	"endColumn": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "illegal_character",
+	"severity": 8,
+	"message": "Illegal character '36843'.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 3,
+	"endLineNumber": 9,
+	"endColumn": 4,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name '迫WidgetsFlutterBinding'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 9,
+	"startColumn": 3,
+	"endLineNumber": 9,
+	"endColumn": 25,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_method",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_method",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The method 'seedTestData' isn't defined for the type 'LocalDataSource'.\nTry correcting the name to the name of an existing method, or defining a method named 'seedTestData'.",
+	"source": "dart",
+	"startLineNumber": 18,
+	"startColumn": 21,
+	"endLineNumber": 18,
+	"endColumn": 33,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 16,
+	"startColumn": 5,
+	"endLineNumber": 16,
+	"endColumn": 10,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 19,
+	"startColumn": 5,
+	"endLineNumber": 19,
+	"endColumn": 10,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/main.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 21,
+	"startColumn": 5,
+	"endLineNumber": 21,
+	"endColumn": 10,
+	"modelVersionId": 7,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/auth/cashier_pin_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_method",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_method",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The method 'solid' isn't defined for the type 'Border'.\nTry correcting the name to the name of an existing method, or defining a method named 'solid'.",
+	"source": "dart",
+	"startLineNumber": 43,
+	"startColumn": 24,
+	"endLineNumber": 43,
+	"endColumn": 29,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/auth/cashier_pin_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_named_parameter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_named_parameter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The named parameter 'padding' isn't defined.\nTry correcting the name to an existing named parameter's name, or defining a named parameter with the name 'padding'.",
+	"source": "dart",
+	"startLineNumber": 79,
+	"startColumn": 15,
+	"endLineNumber": 79,
+	"endColumn": 22,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/auth/cashier_pin_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 31,
+	"startColumn": 5,
+	"endLineNumber": 31,
+	"endColumn": 10,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/auth/cashier_pin_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "prefer_const_constructors",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/prefer_const_constructors",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Use 'const' with the constructor to improve performance.\nTry adding the 'const' keyword to the constructor invocation.",
+	"source": "dart",
+	"startLineNumber": 110,
+	"startColumn": 21,
+	"endLineNumber": 110,
+	"endColumn": 54,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "uri_does_not_exist",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/uri_does_not_exist",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Target of URI doesn't exist: '../../database/database_helper.dart'.\nTry creating the file referenced by the URI, or try using a URI for a file that does exist.",
+	"source": "dart",
+	"startLineNumber": 4,
+	"startColumn": 8,
+	"endLineNumber": 4,
+	"endColumn": 45,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "uri_does_not_exist",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/uri_does_not_exist",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Target of URI doesn't exist: '../../datasources/local_data_source.dart'.\nTry creating the file referenced by the URI, or try using a URI for a file that does exist.",
+	"source": "dart",
+	"startLineNumber": 5,
+	"startColumn": 8,
+	"endLineNumber": 5,
+	"endColumn": 50,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "uri_does_not_exist",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/uri_does_not_exist",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Target of URI doesn't exist: '../../repositories/sync_repository.dart'.\nTry creating the file referenced by the URI, or try using a URI for a file that does exist.",
+	"source": "dart",
+	"startLineNumber": 6,
+	"startColumn": 8,
+	"endLineNumber": 6,
+	"endColumn": 49,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name 'DatabaseHelper'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 33,
+	"startColumn": 22,
+	"endLineNumber": 33,
+	"endColumn": 36,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name 'localDataSourceProvider'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 51,
+	"startColumn": 34,
+	"endLineNumber": 51,
+	"endColumn": 57,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name 'syncRepositoryProvider'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 52,
+	"startColumn": 31,
+	"endLineNumber": 52,
+	"endColumn": 53,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_getter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_getter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The getter 'black' isn't defined for the type 'FontWeight'.\nTry importing the library that defines 'black', correcting the name to the name of an existing getter, or defining a getter or field named 'black'.",
+	"source": "dart",
+	"startLineNumber": 105,
+	"startColumn": 44,
+	"endLineNumber": 105,
+	"endColumn": 49,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "invalid_constant",
+	"severity": 8,
+	"message": "Invalid constant value.",
+	"source": "dart",
+	"startLineNumber": 180,
+	"startColumn": 82,
+	"endLineNumber": 180,
+	"endColumn": 98,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_getter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_getter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The getter 'black' isn't defined for the type 'FontWeight'.\nTry importing the library that defines 'black', correcting the name to the name of an existing getter, or defining a getter or field named 'black'.",
+	"source": "dart",
+	"startLineNumber": 180,
+	"startColumn": 93,
+	"endLineNumber": 180,
+	"endColumn": 98,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "prefer_final_fields",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/prefer_final_fields",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "The private field _currentSessionId could be 'final'.\nTry making the field 'final'.",
+	"source": "dart",
+	"startLineNumber": 23,
+	"startColumn": 7,
+	"endLineNumber": 23,
+	"endColumn": 28,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/close/close_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "use_build_context_synchronously",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/use_build_context_synchronously",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't use 'BuildContext's across async gaps.\nTry rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check.",
+	"source": "dart",
+	"startLineNumber": 79,
+	"startColumn": 28,
+	"endLineNumber": 79,
+	"endColumn": 35,
+	"modelVersionId": 2,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "uri_does_not_exist",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/uri_does_not_exist",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Target of URI doesn't exist: '../../database/database_helper.dart'.\nTry creating the file referenced by the URI, or try using a URI for a file that does exist.",
+	"source": "dart",
+	"startLineNumber": 4,
+	"startColumn": 8,
+	"endLineNumber": 4,
+	"endColumn": 45,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_identifier",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_identifier",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "Undefined name 'DatabaseHelper'.\nTry correcting the name to one that is defined, or defining the name.",
+	"source": "dart",
+	"startLineNumber": 30,
+	"startColumn": 22,
+	"endLineNumber": 30,
+	"endColumn": 36,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "use_build_context_synchronously",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/use_build_context_synchronously",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't use 'BuildContext's across async gaps.\nTry rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check.",
+	"source": "dart",
+	"startLineNumber": 50,
+	"startColumn": 28,
+	"endLineNumber": 50,
+	"endColumn": 35,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "use_build_context_synchronously",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/use_build_context_synchronously",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't use 'BuildContext's across async gaps.\nTry rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check.",
+	"source": "dart",
+	"startLineNumber": 57,
+	"startColumn": 28,
+	"endLineNumber": 57,
+	"endColumn": 35,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "deprecated_member_use",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/deprecated_member_use",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre.\nTry replacing the use of the deprecated member with the replacement.",
+	"source": "dart",
+	"startLineNumber": 97,
+	"startColumn": 19,
+	"endLineNumber": 97,
+	"endColumn": 24,
+	"tags": [
+		2
+	],
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/inventory/inventory_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "deprecated_member_use",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/deprecated_member_use",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre.\nTry replacing the use of the deprecated member with the replacement.",
+	"source": "dart",
+	"startLineNumber": 117,
+	"startColumn": 19,
+	"endLineNumber": 117,
+	"endColumn": 24,
+	"tags": [
+		2
+	],
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/sale_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_enum_constant",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_enum_constant",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "There's no constant named 'between' in 'MainAxisAlignment'.\nTry correcting the name to the name of an existing constant, or defining a constant named 'between'.",
+	"source": "dart",
+	"startLineNumber": 79,
+	"startColumn": 62,
+	"endLineNumber": 79,
+	"endColumn": 69,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/sale_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "invalid_constant",
+	"severity": 8,
+	"message": "Invalid constant value.",
+	"source": "dart",
+	"startLineNumber": 84,
+	"startColumn": 78,
+	"endLineNumber": 84,
+	"endColumn": 94,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/sale_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_getter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_getter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The getter 'black' isn't defined for the type 'FontWeight'.\nTry importing the library that defines 'black', correcting the name to the name of an existing getter, or defining a getter or field named 'black'.",
+	"source": "dart",
+	"startLineNumber": 84,
+	"startColumn": 89,
+	"endLineNumber": 84,
+	"endColumn": 94,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/sale_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_method",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_method",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The method 'PaymentModal' isn't defined for the type 'SaleScreen'.\nTry correcting the name to the name of an existing method, or defining a method named 'PaymentModal'.",
+	"source": "dart",
+	"startLineNumber": 101,
+	"startColumn": 59,
+	"endLineNumber": 101,
+	"endColumn": 71,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_enum_constant",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_enum_constant",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "There's no constant named 'between' in 'MainAxisAlignment'.\nTry correcting the name to the name of an existing constant, or defining a constant named 'between'.",
+	"source": "dart",
+	"startLineNumber": 54,
+	"startColumn": 50,
+	"endLineNumber": 54,
+	"endColumn": 57,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_method",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_method",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The method 'solid' isn't defined for the type 'Border'.\nTry correcting the name to the name of an existing method, or defining a method named 'solid'.",
+	"source": "dart",
+	"startLineNumber": 105,
+	"startColumn": 32,
+	"endLineNumber": 105,
+	"endColumn": 37,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_enum_constant",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_enum_constant",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "There's no constant named 'between' in 'MainAxisAlignment'.\nTry correcting the name to the name of an existing constant, or defining a constant named 'between'.",
+	"source": "dart",
+	"startLineNumber": 108,
+	"startColumn": 54,
+	"endLineNumber": 108,
+	"endColumn": 61,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": "invalid_constant",
+	"severity": 8,
+	"message": "Invalid constant value.",
+	"source": "dart",
+	"startLineNumber": 113,
+	"startColumn": 70,
+	"endLineNumber": 113,
+	"endColumn": 86,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "undefined_getter",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/undefined_getter",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The getter 'black' isn't defined for the type 'FontWeight'.\nTry importing the library that defines 'black', correcting the name to the name of an existing getter, or defining a getter or field named 'black'.",
+	"source": "dart",
+	"startLineNumber": 113,
+	"startColumn": 81,
+	"endLineNumber": 113,
+	"endColumn": 86,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/sale/widgets/payment_modal.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "unnecessary_const",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/unnecessary_const",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Unnecessary 'const' keyword.\nTry removing the keyword.",
+	"source": "dart",
+	"startLineNumber": 129,
+	"startColumn": 19,
+	"endLineNumber": 129,
+	"endColumn": 24,
+	"origin": "extHost1"
+},{
+	"resource": "/D:/dev/dabafoodstall/test/widget_test.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "creation_with_non_type",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/creation_with_non_type",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 8,
+	"message": "The name 'MyApp' isn't a class.\nTry correcting the name to match an existing class.",
+	"source": "dart",
+	"startLineNumber": 16,
+	"startColumn": 35,
+	"endLineNumber": 16,
+	"endColumn": 40,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/datasources/local_data_source.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "unused_import",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/unused_import",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 4,
+	"message": "Unused import: 'package:sqflite/sqflite.dart'.\nTry removing the import directive.",
+	"source": "dart",
+	"startLineNumber": 1,
+	"startColumn": 8,
+	"endLineNumber": 1,
+	"endColumn": 38,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "unused_field",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/unused_field",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 4,
+	"message": "The value of the field '_localDataSource' isn't used.\nTry removing the field, or using it.",
+	"source": "dart",
+	"startLineNumber": 33,
+	"startColumn": 25,
+	"endLineNumber": 33,
+	"endColumn": 41,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 59,
+	"startColumn": 9,
+	"endLineNumber": 59,
+	"endColumn": 14,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 93,
+	"startColumn": 7,
+	"endLineNumber": 93,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 119,
+	"startColumn": 9,
+	"endLineNumber": 119,
+	"endColumn": 14,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 123,
+	"startColumn": 7,
+	"endLineNumber": 123,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/repositories/sync_repository.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 127,
+	"startColumn": 7,
+	"endLineNumber": 127,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/domain/usecases/process_sale_usecase.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "unused_import",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/unused_import",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 4,
+	"message": "Unused import: '../../data/models/order_model.dart'.\nTry removing the import directive.",
+	"source": "dart",
+	"startLineNumber": 2,
+	"startColumn": 8,
+	"endLineNumber": 2,
+	"endColumn": 44,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/domain/usecases/process_sale_usecase.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 49,
+	"startColumn": 7,
+	"endLineNumber": 49,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/domain/usecases/process_sale_usecase.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 57,
+	"startColumn": 7,
+	"endLineNumber": 57,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/services/printer_service.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 13,
+	"startColumn": 7,
+	"endLineNumber": 13,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/services/printer_service.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 27,
+	"startColumn": 7,
+	"endLineNumber": 27,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/services/printer_service.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 43,
+	"startColumn": 7,
+	"endLineNumber": 43,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/core/services/printer_service.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 91,
+	"startColumn": 5,
+	"endLineNumber": 91,
+	"endColumn": 10,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/data/datasources/remote_api_source.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 41,
+	"startColumn": 7,
+	"endLineNumber": 41,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/domain/usecases/check_stock_usecase.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 48,
+	"startColumn": 7,
+	"endLineNumber": 48,
+	"endColumn": 12,
+	"origin": "extHost1"
+},{
+	"resource": "/d:/dev/dabafoodstall/lib/presentation/auth/admin_login_screen.dart",
+	"owner": "dartAnalysisLSP",
+	"code": {
+		"value": "avoid_print",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostics/avoid_print",
+			"scheme": "https",
+			"authority": "dart.dev"
+		}
+	},
+	"severity": 2,
+	"message": "Don't invoke 'print' in production code.\nTry using a logging framework.",
+	"source": "dart",
+	"startLineNumber": 20,
+	"startColumn": 7,
+	"endLineNumber": 20,
+	"endColumn": 12,
+	"origin": "extHost1"
+}]

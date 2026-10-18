@@ -1,0 +1,25 @@
+# Définissez ici le chemin exact de votre dossier d'installation Java JDK
+$javaPath = "C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot" # Exemple de chemin
+
+# Enregistrement de JAVA_HOME
+[Environment]::SetEnvironmentVariable("JAVA_HOME", $javaPath, "User")
+$env:JAVA_HOME = $javaPath
+
+# Ajout au PATH utilisateur si ce n'est pas déjà fait
+$currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($currentPath -notlike "*$javaPath\bin*") {
+    [Environment]::SetEnvironmentVariable("Path", "$currentPath;$javaPath\bin", "User")
+    $env:Path += ";$javaPath\bin"
+}
+
+Write-Host "✅ JAVA_HOME configuré avec succès !" -ForegroundColor Green
+
+
+sdkmanager --version                                                    
+WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.    
+The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+
+22.0
+
+PS D:\dev\dabafoodstall> 

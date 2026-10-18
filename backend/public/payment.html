@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENZO-POS - Portail de Facturation</title>
+
+        <!-- 🔑 SÉCURISATION OWASP : Alignement strict sur la règle Web:S5725 pour le réseau local hors-ligne -->
+        <!-- 🔑 ALIGNEMENT SAAS : Le chemin relatif désactive l'exigence d'integrity de SonarLint et fonctionne sur n'importe quelle IP -->
+    <script src="/socket.io/socket.io.min.js"></script>
+    <style>
+        body { 
+            font-family: 'Segoe UI', system-ui, Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f6f9; 
+            margin: 0; padding: 0;
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; height: 100vh;
+        }
+        .card {
+            background-color: #ffffff; padding: 24px; border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 440px; width: 100%; border: 1px solid #f3f4f6; box-sizing: border-box;
+        }
+        .header { text-align: center; margin-bottom: 24px; }
+        .header h1 { color: #2563eb; font-size: 24px; font-weight: 700; margin: 0; }
+        .header p { color: #6b7280; font-size: 13px; margin: 4px 0 0 0; }
+        .divider { border-bottom: 1px solid #f3f4f6; margin-top: 16px; }
+        .form-group { margin-bottom: 24px; }
+        .label-step { display: block; font-size: 12px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .text-hint { font-size: 13px; color: #4b5563; margin: 0 0 8px 0; }
+        .input-text, .select-field {
+            width: 100%; padding: 12px; border: 1px solid #e5e7eb; border-radius: 12px;
+            text-align: center; font-size: 16px; box-sizing: border-box;
+        }
+        .btn-blue { width: 100%; background-color: #2563eb; color: #ffffff; font-weight: 600; padding: 14px; border: none; border-radius: 12px; cursor: pointer; }
+        .btn-green { width: 100%; background-color: #047857; color: #ffffff; font-weight: 700; padding: 16px; border: none; border-radius: 12px; cursor: pointer; }
+        .info-box { display: none; background-color: #f9fafb; padding: 16px; border-radius: 12px; border: 1px solid #f3f4f6; margin-bottom: 24px; }
+        .info-box p { margin: 6px 0; font-size: 14px; color: #374151; }
+        .text-amber { color: #d97706; font-weight: 600; }
+        .grid-operators { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+        .btn-op { padding: 14px; border: 1px solid #e5e7eb; border-radius: 12px; font-weight: 700; background-color: #ffffff; cursor: pointer; }
+        .btn-op.active { border: 2px solid #2563eb; background-color: #eff6ff; color: #1d4ed8; }
+        body .hidden { display: none; }
+        .notification { display: none; margin-bottom: 16px; padding: 12px; border-radius: 8px; font-size: 14px; text-align: center; font-weight: 500; }
+        .notification.success { background-color: #ecfdf5; color: #065f46; display: block; }
+        .notification.error { background-color: #fef2f2; color: #991b1b; display: block; }
+    </style>
+
+    <script>
+        const PROTOCOL = window.location.protocol === 'https:' ? 'https:' : 'http:';
+        const SERVER_URL = PROTOCOL + "//192.168.1.100:5000";
+        const API_BASE = SERVER_URL + "/api/v1/payment";
+        let operateurSelectionne = "";
+        let cacheNomPos = ""; 
+        let socket;
+
+        function showMsg(text, type) {
+            const el = document.getElementById('notification');
+            if (el) { el.innerText = text; el.className = "notification " + type; }
+        }
+
+        function initSocketConnection(orderId) {
+            const idAbonnement = document.getElementById('id_abonnement').value;
+            if (typeof io === 'undefined') {
+                showMsg("🔌 Erreur réseau locale : Liaison temps réel indisponible.", "error");
+                return;
+            }
+            if (socket) socket.disconnect();
+            socket = io(SERVER_URL);
+            
+            const TIMEOUT_DELAI = 45000; 
+            const timerSecours = setTimeout(() => {
+                showMsg("🔌 Plateforme de paiement temporairement indisponible. Veuillez réessayer plus tard.", "error");
+                const btn = document.getElementById('btn-payer');
+                if (btn) { btn.disabled = false; btn.innerText = "Confirmer le règlement & Débloquer la caisse"; }
+                socket.disconnect();
+            }, TIMEOUT_DELAI);
+
+            socket.on('connect', () => { 
+                socket.emit('join_order_room', { order_id: orderId }); 
+                if (idAbonnement) { socket.emit('join_order_room', { order_id: `sub_${idAbonnement}` }); }
+            });
+            
+            socket.on('payment_update', (data) => {
+                const btn = document.getElementById('btn-payer');
+                if (data && (data.order_id === orderId || String(data.id_abonnement) === String(idAbonnement))) {
+                    clearTimeout(timerSecours);
+
+                    if (data.status === 'SUCCESS' || data.status === 'ACCEPTED') {
+                        const dateAffichee = new Date(data.new_expiration).toLocaleDateString('fr-FR');
+                        
+                        alert("🎉 RÈGLEMENT VALIDÉ !\n\nVotre licence GENZO-POS a été prolongée avec succès.\n📅 Nouvelle échéance : " + dateAffichee);
+                        
+                        const elExp = document.getElementById('info-expiration');
+                        if (elExp) { elExp.innerText = dateAffichee; elExp.className = "text-emerald-600 font-bold"; }
+
+                        if (btn) {
+                            btn.disabled = false;
+                            btn.className = "btn-green";
+                            btn.innerText = "Confirmer le règlement & Débloquer la caisse";
+                        }
+                        document.getElementById('telephone_payeur').value = "";
+                        document.getElementById('code_court').value = "";
+                        document.getElementById('zone-etape2').style.display = 'none';
+                        document.getElementById('zone-etape3').classList.add('hidden');
+                        operateurSelectionne = "";
+                        document.querySelectorAll('.btn-op').forEach(b => b.classList.remove('active'));
+                        showMsg("Formulaire réinitialisé. Prêt pour une nouvelle saisie.", "success");
+
+                    } else {
+                        alert("❌ Le paiement a été refusé par l'opérateur (Solde insuffisant ou annulation).");
+                        if (btn) { btn.disabled = false; btn.innerText = "Confirmer le règlement & Débloquer la caisse"; }
+                    }
+                    socket.disconnect();
+                }
+            });
+        }
+        window.verifierTerminal = async function() {
+            const codeCourt = document.getElementById('code_court').value.trim();
+            if (!codeCourt) return showMsg("Veuillez saisir le code unique de votre caisse.", "error");
+
+            try {
+                const response = await fetch(API_BASE + "/search?code_court=" + encodeURIComponent(codeCourt));
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    const info = data.data;
+                    document.getElementById('id_abonnement').value = info.id_abonnement;
+                    
+                    cacheNomPos = info.pos_raison_sociale || "Mon Étal Terrain";
+                    document.getElementById('info-nom-pos').innerText = cacheNomPos;
+                    document.getElementById('info-type-pos').innerText = info.type_pos || "Général";
+                    document.getElementById('info-plan').innerText = info.nom_plan;
+                    
+                    const dateFin = new Date(info.date_fin);
+                    const elExp = document.getElementById('info-expiration');
+                    elExp.innerText = dateFin.toLocaleDateString('fr-FR');
+                    
+                    if (dateFin <= new Date()) { 
+                        elExp.className = "text-amber"; 
+                        elExp.innerText += " (Expirée - Débridage requis)"; 
+                    } else {
+                        elExp.className = "";
+                    }
+
+                    document.getElementById('zone-etape2').style.display = 'block';
+                    document.getElementById('zone-etape3').classList.remove('hidden');
+                    showMsg("Terminal identifié avec succès.", "success");
+                } else {
+                    showMsg(data.message || "Identifiant introuvable.", "error");
+                }
+            } catch (err) {
+                console.error("Erreur d'identification du terminal :", err);
+                showMsg("Impossible de joindre le serveur de facturation.", "error");
+            }
+        };
+
+        window.selectOperateur = function(op, element) {
+            operateurSelectionne = op;
+            document.querySelectorAll('.btn-op').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+        };
+
+        window.declencherReglement = async function() {
+            const idAbonnement = document.getElementById('id_abonnement').value;
+            const telephone = document.getElementById('telephone_payeur').value.trim();
+            const selectEl = document.getElementById('forfait-select');
+            const mois = selectEl.value;
+            
+            const texteForfait = selectEl.options[selectEl.selectedIndex].text;
+
+            if (!operateurSelectionne) return showMsg("Veuillez sélectionner un opérateur mobile.", "error");
+            if (!telephone) return showMsg("Le numéro de téléphone payeur est obligatoire.", "error");
+
+            const messageConfirmation = "Souhaitez-vous confirmer l'opération ?\n\n" +
+                                        "👉 Forfait : " + texteForfait + "\n" +
+                                        "👉 Bénéficiaire : " + cacheNomPos + "\n" +
+                                        "👉 Compte payeur : " + telephone + " (" + operateurSelectionne + ")";
+            
+            if (!confirm(messageConfirmation)) return;
+
+            const btn = document.getElementById('btn-payer');
+            if (btn) {
+                btn.disabled = true; 
+                btn.innerText = "Attente du code PIN sur votre mobile...";
+            }
+
+            try {
+                const response = await fetch(API_BASE + "/initiate", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id_abonnement: idAbonnement, telephone_payeur: telephone, operateur: operateurSelectionne, mois_prolongation: mois })
+                });
+
+                const data = await response.json();
+                if (response.ok && data.status === 'success') {
+                    showMsg(data.message, "success");
+                    initSocketConnection(data.order_id);
+                } else {
+                    showMsg(data.message || "Erreur d'initiation.", "error");
+                    if (btn) { btn.disabled = false; btn.innerText = "Confirmer le règlement & Débloquer la caisse"; }
+                }
+            } catch (err) {
+                console.error("Échec d'initiation du règlement Mobile Money :", err);
+                showMsg("Échec de connexion avec le Sync Engine.", "error");
+                if (btn) { btn.disabled = false; btn.innerText = "Confirmer le règlement & Débloquer la caisse"; }
+            }
+        };
+
+        // 🔑 LIAISON STANDARD ÉVÉNEMENTIELLE : Plus de conflits de portée inline
+        document.addEventListener("DOMContentLoaded", function() {
+            const boutonVerifier = document.getElementById('btn-verifier');
+            if (boutonVerifier) {
+                boutonVerifier.addEventListener('click', window.verifierTerminal);
+            }
+
+            const boutonPaiement = document.getElementById('btn-payer');
+            if (boutonPaiement) {
+                boutonPaiement.addEventListener('click', window.declencherReglement);
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <div class="card">
+        <header class="header">
+            <h1>GENZO-POS by GENZOSOFT</h1>
+            <p>Reconduction de Forfait & Débridage de Caisse</p>
+            <div class="divider"></div>
+        </header>
+
+        <div id="notification" class="notification" role="alert"></div>
+
+        <!-- ÉTAPE 1 -->
+        <div class="form-group">
+            <label for="code_court" class="label-step">🔍 Étape 1 : Identification du terminal</label>
+            <p class="text-hint">Code unique à 3x4 chiffres de la caisse :</p>
+            <input type="text" id="code_court" placeholder="ex: 1793-5270-6395" class="input-text">
+            <button id="btn-verifier" type="button" class="btn-blue" style="margin-top: 12px;">Vérifier l'identifiant</button>
+        </div>
+
+        <!-- ÉTAPE 2 -->
+        <div id="zone-etape2" class="info-box">
+            <p class="label-step" aria-level="2">👤 Étape 2 : Informations de l'étal</p>
+            <p><strong>Nom de l'Étal :</strong> <span id="info-nom-pos"></span></p>
+            <p><strong>Type de Commerce :</strong> <span id="info-type-pos"></span></p>
+            <p><strong>Formule :</strong> <span id="info-plan"></span></p>
+            <p><strong>Échéance Licence :</strong> <span id="info-expiration"></span></p>
+            <input type="hidden" id="id_abonnement">
+        </div>
+
+        <!-- ÉTAPE 3 -->
+        <div id="zone-etape3" class="hidden">
+            <div class="form-group">
+                <label for="forfait-select" class="label-step">💳 Étape 3 : Forfait & Mode de Paiement</label>
+                <select id="forfait-select" class="select-field">
+                    <option value="1">1 Mois Standard — 5 000 FCFA</option>
+                    <option value="3">3 Mois Trimestriel — 15 000 FCFA</option>
+                    <option value="6">6 Mois Semestriel — 30 000 FCFA</option>
+                    <option value="12">1 An Forfait Annuel — 60 000 FCFA</option>
+                </select>
+            </div>
+
+            <fieldset class="form-group" style="border: none; padding: 0; margin: 0;">
+                <legend class="text-hint">Sélectionnez votre moyen de paiement mobile :</legend>
+                <div class="grid-operators">
+                    <button type="button" onclick="selectOperateur('WAVE', this)" class="btn-op">WAVE 🌊</button>
+                    <button type="button" onclick="selectOperateur('ORANGE', this)" class="btn-op">ORANGE 🍊</button>
+                    <button type="button" onclick="selectOperateur('MTN', this)" class="btn-op">MTN 💛</button>
+                    <button type="button" onclick="selectOperateur('MOOV', this)" class="btn-op">MOOV 💚</button>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="telephone_payeur" class="text-hint" style="display: block; margin-bottom: 8px;">Numéro de compte Mobile Money payeur :</label>
+                <input type="text" id="telephone_payeur" placeholder="ex: 0701020304" class="input-text" style="text-align: left; padding-left: 16px;">
+            </div>
+
+            <button id="btn-payer" type="button" class="btn-green">Confirmer le règlement & Débloquer la caisse</button>
+        </div>
+    </div>
+
+</body>
+</html>
